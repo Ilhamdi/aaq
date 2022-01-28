@@ -42,7 +42,7 @@ class ContentController extends Controller
 
     public function beranda()
     {
-        $slider = Content::where('section','=','slider')->get();
+        $slider = Content::where('section','=','slider')->orderBy('urut','asc')->get();
         $heading_block = Content::where('section','=','heading-block')->first();
         $last_event1 = Content::where('section','=','last-event')->where('urut','=','1')->first();
         $last_event = Content::where('section','=','last-event')->where('urut','=','2')->first();

@@ -47,27 +47,27 @@
 <nav class="primary-menu">
     <ul class="menu-container">
         <li class="menu-item " >
-            <a class="menu-link " href="{{url('/')}}"><div>Beranda</div></a>
+            <a class="menu-link " href="{{url('/')}}"><div>@lang('general.menu.home')</div></a>
         </li>
         <li class="menu-item">
-            <a class="menu-link " href="{{url('/about')}}"><div>Tentang</div></a>
+            <a class="menu-link " href="{{url('/about')}}"><div>@lang('general.menu.about')</div></a>
         </li>
         
 
         <li class="menu-item">
-            <a class="menu-link" href="#"><div>Layanan</div></a>
+            <a class="menu-link" href="#"><div>@lang('general.menu.service')</div></a>
             <ul class="sub-menu-container">
             <li class="menu-item">
-            <a class="menu-link" href="services.html"><div>Multimedia</div></a>
+            <a class="menu-link" href="services.html"><div>MULTIMEDIA Services</div></a>
             </li>
             <li class="menu-item">
-            <a class="menu-link" href="#"><div>Live Streaming</div></a>
+            <a class="menu-link" href="#"><div>BROADCASTING Solutions</div></a>
             </li>
             <li class="menu-item">
-            <a class="menu-link" href="#"><div>Event Organizer</div></a>
+            <a class="menu-link" href="#"><div>EVENT Services</div></a>
             </li>
             <li class="menu-item">
-            <a class="menu-link" href="#"><div>Jaringan</div></a>
+            <a class="menu-link" href="#"><div>INTERNET Solutions</div></a>
             <ul class="sub-menu-container">
             <li class="menu-item">
             <a class="menu-link" href="index-corporate.html"><div>Product & Layanan</div></a>
@@ -96,22 +96,22 @@
 
 
         <li class="menu-item mega-menu">
-            <a class="menu-link" href="portfolio.html"><div>Portfolio</div></a>
+            <a class="menu-link" href="portfolio.html"><div>@lang('general.menu.portofolio')</div></a>
         </li>
         
         <li class="menu-item mega-menu">
-            <a class="menu-link" href="contac.html"><div>Kontak</div></a>
+            <a class="menu-link" href="contac.html"><div>@lang('general.menu.contact')</div></a>
         </li>
         <li class="menu-item dropdown">
-            <a class="menu-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >{{strtoupper(Lang::locale())}}
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="lang/id">ID</a></li>
-        <li><a class="dropdown-item" href="lang/en">EN</a></li>
-    </ul>
-        </li>
+            <a class="menu-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >{{strtoupper(Lang::locale())}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item flag-icon-id" href="lang/id">ID</a></li>
+                <li><a class="dropdown-item flag-icon-en" href="lang/en">EN</a></li>
+            </ul>
+                </li>
 
-    </ul>
+            </ul>
 </nav>
 <form class="top-search-form" action="https://themes.semicolonweb.com/html/canvas/search.html" method="get">
 <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
@@ -137,16 +137,15 @@
 <div class="col-md-8">
 <div class="widget clearfix">
 <img src="images/logo_aaq.png" alt="Image" class="footer-logo">
-<p>Multimedia <strong>Production</strong></p>
 <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
 <address>
-<strong>Headquarters:</strong><br>
-795 Folsom Ave, Suite 600<br>
-San Francisco, CA 94107<br>
+<strong>Alamat:</strong><br>
+Jln. Gaharu Gg. Amat Lama No.16/29<br>
+Medan - Indonesia<br>
 </address>
-<abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
-<abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
-<abbr title="Email Address"><strong>Email:</strong></abbr> <a href="https://themes.semicolonweb.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20494e464f6043414e5641530e434f4d">[email&#160;protected]</a>
+<abbr title="Phone Number"><strong>Phone:</strong></abbr> (061) 8547 xxxx<br>
+<abbr title="Fax"><strong>Fax:</strong></abbr> (061) 8547 xxxx<br>
+<abbr title="Email Address"><strong>Email:</strong></abbr> <a href="#" class="__cf_email__" data-cfemail="20494e464f6043414e5641530e434f4d">cs@aaqmultimediapro.id</a>
 </div>
 </div>
 </div>
@@ -181,10 +180,10 @@ San Francisco, CA 94107<br>
 <div class="row">
 <div class="col-6 col-md-12 col-lg-6 clearfix bottommargin-sm">
 <a href="#" class="social-icon si-dark si-colored si-facebook mb-0" style="margin-right: 10px;">
-<i class="icon-facebook"></i>
-<i class="icon-facebook"></i>
+<i class="icon-instagram"></i>
+<i class="icon-instagram"></i>
 </a>
-<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+<a href="#"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>on Instagram</small></a>
 </div>
 <div class="col-6 col-md-12 col-lg-6 clearfix">
 <a href="#" class="social-icon si-dark si-colored si-rss mb-0" style="margin-right: 10px;">
@@ -245,7 +244,7 @@ Copyrights &copy; 2022 All Rights Reserved by Canvas Inc.<br>
 </a>
 </div>
 <div class="clear"></div>
-<i class="icon-envelope2"></i> <a href="https://themes.semicolonweb.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f39a9d959cb390929d859280dd909c9e">[email&#160;protected]</a> <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+<i class="icon-envelope2"></i> <a href="https://themes.semicolonweb.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f39a9d959cb390929d859280dd909c9e">cs@aaqmultimediapro.id</a> <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
 </div>
 </div>
 </div>
