@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="{{asset('css/animate.css')}}" type="text/css" />
 <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" type="text/css" />
 <link rel="stylesheet" href="{{asset('css/custom.css')}}" type="text/css" />
+
+    
+
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>AAQ | Multimedia Production</title>
@@ -58,13 +61,56 @@
             <a class="menu-link" href="#"><div>@lang('general.menu.service')</div></a>
             <ul class="sub-menu-container">
             <li class="menu-item">
-            <a class="menu-link" href="services.html"><div>MULTIMEDIA Services</div></a>
+            <a class="menu-link" href="#"><div>MULTIMEDIA Services</div></a>
+                <ul class="sub-menu-container">
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{url('/liveEvent')}}"><div>Live Event</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{url('/postProduction')}}"><div>Post Production</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{url('/videoProduction')}}"><div>Video Production</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Profesional Video Shooting</div></a>
+                    </li>
+                </ul>
+
             </li>
             <li class="menu-item">
             <a class="menu-link" href="#"><div>BROADCASTING Solutions</div></a>
+                <ul class="sub-menu-container">
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Virtual</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Hybrid Event</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Live Streaming</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Video Editing and Titling</div></a>
+                    </li>
+                </ul>
             </li>
             <li class="menu-item">
             <a class="menu-link" href="#"><div>EVENT Services</div></a>
+                <ul class="sub-menu-container">
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Planner</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Organizer</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Production</div></a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#"><div>Equipment Needs</div></a>
+                    </li>
+                </ul>
             </li>
             <li class="menu-item">
             <a class="menu-link" href="#"><div>INTERNET Solutions</div></a>
@@ -96,11 +142,11 @@
 
 
         <li class="menu-item mega-menu">
-            <a class="menu-link" href="portfolio.html"><div>@lang('general.menu.portofolio')</div></a>
+            <a class="menu-link" href="{{url('/portodiplay')}}"><div>@lang('general.menu.portofolio')</div></a>
         </li>
         
         <li class="menu-item mega-menu">
-            <a class="menu-link" href="contac.html"><div>@lang('general.menu.contact')</div></a>
+            <a class="menu-link" href="{{url('/contact')}}"><div>@lang('general.menu.contact')</div></a>
         </li>
         <li class="menu-item dropdown">
             <a class="menu-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >{{strtoupper(Lang::locale())}}
@@ -259,6 +305,10 @@ Copyrights &copy; 2022 All Rights Reserved by Canvas Inc.<br>
 
 <script src="{{asset('js/functions.js')}}"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6ccbd4201d156bf4","token":"0627f0b8b73941069bc19139e63db853","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+
+
+
+
 </body>
 
 <!-- Mirrored from themes.semicolonweb.com/html/canvas/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 04:23:32 GMT -->

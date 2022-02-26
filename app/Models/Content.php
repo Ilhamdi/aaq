@@ -10,7 +10,7 @@ class Content extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul','span','status','image','section','link','menu',
+        'judul','span','status','image','section','link','menu','lang','urut','icon','deskripsi'
     ];
 
 }

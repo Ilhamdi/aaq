@@ -46,7 +46,22 @@
 <div class="card-body">
     <form method="post" action="{{ route('content.store') }}" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
         
-      <div class="form-group{{ $errors->has('judul') ? ' has-error' : '' }}">
+    <div class="form-group{{ $errors->has('lang') ? ' has-error' : '' }}">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lang">Bahasa 
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                    <select class="form-control" id="lang" name="lang">
+                                    
+                                      <option value="ID">Indonesia</option>
+                                      <option value="EN">English</option>     
+                                    </select>
+                                    @if ($errors->has('lang'))
+                                    <span class="help-block">{{ $errors->first('lang') }}</span>
+                                    @endif
+                                </div>
+                        </div>
+    
+    <div class="form-group{{ $errors->has('judul') ? ' has-error' : '' }}">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="judul">Isian Teks <span class="required">*</span>
         </label>
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -64,6 +79,28 @@
             <input type="text"  id="span" name="span" class="form-control col-md-7 col-xs-12" placeholder="Isian Keterangan ..."  >
             @if ($errors->has('span'))
               <span class="help-block">{{ $errors->first('span') }}</span>
+            @endif
+        </div>
+      </div>
+      <div class="form-group{{ $errors->has('icon') ? ' has-error' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="icon">Icon 
+        </label>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <input type="text"  id="icon" name="icon" class="form-control col-md-7 col-xs-12" placeholder="Isian Icon ..."  >
+            @if ($errors->has('icon'))
+              <span class="help-block">{{ $errors->first('icon') }}</span>
+            @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('deskripsi') ? ' has-error' : '' }}">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="icon">Deskripsi 
+        </label>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            
+            <textarea id="deskripsi" name="deskripsi" class="form-control col-md-7 col-xs-12" rows="3" placeholder="Isian Deskripsi ..."></textarea>
+            @if ($errors->has('deskripsi'))
+              <span class="help-block">{{ $errors->first('deskripsi') }}</span>
             @endif
         </div>
       </div>
@@ -102,7 +139,9 @@
                                     
                                       <option value="slider">slider</option>
                                       <option value="heading-block">heading-block</option> 
-                                      <option value="last-event">last-event</option>    
+                                      <option value="layanan">layanan</option>   
+                                      <option value="judul_about">judul_about</option> 
+                                      <option value="galeri_about">galeri_about</option> 
                                     </select>
                                     @if ($errors->has('section'))
                                     <span class="help-block">{{ $errors->first('section') }}</span>

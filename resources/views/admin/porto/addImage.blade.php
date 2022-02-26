@@ -44,26 +44,27 @@
 
 
 <div class="card-body">
-    <form method="post" action="{{ route('porto.store') }}" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+    <form method="post" action="{{ route('storeImage') }}" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
         
       <div class="form-group{{ $errors->has('client') ? ' has-error' : '' }}">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="client">Nama Klien <span class="required">*</span>
         </label>
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <input type="text"  id="client" name="client" class="form-control col-md-7 col-xs-12" placeholder="Isian Nama Klien..." required >
+            <input type="hidden"  id="portos_id" name="portos_id" class="form-control col-md-7 col-xs-12" value="{{$data->id}}"  >
+            <input type="text"  id="client" name="client" class="form-control col-md-7 col-xs-12" value="{{$data->client}}" readonly >
             @if ($errors->has('client'))
               <span class="help-block">{{ $errors->first('client') }}</span>
             @endif
         </div>
       </div>
 
-      <div class="form-group{{ $errors->has('event') ? ' has-error' : '' }}">
+      <div class="form-group{{ $errors->has('ket') ? ' has-error' : '' }}">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="span">Event (Acara) 
         </label>
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <input type="text"  id="event" name="event" class="form-control col-md-7 col-xs-12" placeholder="Isian Keterangan Even ..."  >
-            @if ($errors->has('event'))
-              <span class="help-block">{{ $errors->first('event') }}</span>
+            <input type="text"  id="ket" name="ket" class="form-control col-md-7 col-xs-12" placeholder="Isian Keterangan Even ..."  >
+            @if ($errors->has('ket'))
+              <span class="help-block">{{ $errors->first('ket') }}</span>
             @endif
         </div>
       </div>
@@ -95,6 +96,29 @@
 </div>
   
 </div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Gambar Portofolio Event {{$data->client}} </h3>
+      
+  </div>
+  
+  <div class="card-body">
+    <div class="row">
+    @if (count($porto))
+        @foreach ($porto as $key => $content)
+      <div class="col-sm-2">
+        <a href="{{asset('/images/porto/'.$content->image) }}" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+        <img src="{{asset('/images/porto/'.$content->image) }}" class="img-fluid mb-2" alt="white sample"/>
+        </a>
+      </div>
+
+      @endforeach
+        @endif
+
+    </div>
+
+  </div>
 </div>
 
 
@@ -102,10 +126,29 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="{{asset('vendor/ekko-lightbox/ekko-lightbox.css')}}">
 @stop
 
 @section('js')
+
+<script src="{{asset('vendor/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
 <script>
     console.log('Hi!'); 
+</script>
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
 </script>
 @stop

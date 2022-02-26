@@ -49,19 +49,22 @@
         <div class="section my-0">
             <div class="container">
                 <div class="row mt-4 col-mb-50">
+                @foreach($layanan as $row)
                     <div class="col-lg-3">
-                        <i class="i-plain color i-large icon-line2-screen-desktop inline-block" style="margin-bottom: 15px;"></i>
+                        <i class="i-plain color i-large {{$row->icon}} inline-block" style="margin-bottom: 15px;"></i>
                         <div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
-                            <span class="before-heading">Profesional Crew .</span>
-                            <h4>Multimedia</h4>
+                            <span class="before-heading">{{$row->span}}</span>
+                            <h4>{{$row->judul}}</h4>
                         </div>
-                            <p>Kami merupakan salah satu vendor yang handal dan dipercaya oleh BUMN, Instansi Pemerintahan, dan perusahaan swasta lainnya.</p>
+                            <p>{{$row->deskripsi}}</p>
                     </div>
-                    <div class="col-lg-3">
+
+                @endforeach
+                    <!-- <div class="col-lg-3">
                         <i class="i-plain color i-large icon-line2-equalizer inline-block" style="margin-bottom: 15px;"></i>
                         <div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
                             <span class="before-heading">Multi Platform </span>
-                            <h4>BROADCASTING</h4>
+                            <h4>BROADCASTING SOLUTIONS</h4>
                         </div>
                         <p>Event live streaming dapat disaksikan melalui berbagai platform seperti Youtube, Zoom, Google Meeting, Instagram dan lain sebagainya.</p>
                     </div>
@@ -80,41 +83,45 @@
                             <h4>EVENT Services</h4>
                         </div>
                         <p>Pengadaan peralatan alat-alat dalam berbagai acara seperti panggung pentas, pernikahan, acara keluarga,  dan kebutuhan lainnya dengan peralatan lengkap dan berkualitas sesuai kebutuhan anda.</p>
-                    </div>
+                    </div> -->
+
+
+
             </div>
         </div>
     </div>
 
 <div class="container clearfix">
 <div class="heading-block topmargin-lg center">
-<h2>Kenapa kami?</h2>
-<span class="mx-auto">Yuk gunakan Jasa Live Streaming Sekarang Juga dan Pancarluaskan Event Anda Keseluruh Dunia. Tertarik?</span>
+<h2>@lang('general.why_us')</h2>
+<span class="mx-auto">@lang('general.why_us_span')</span>
 </div>
 <div class="row col-mb-50 mb-4">
 <div class="col-lg-4 col-md-6">
-<div class="feature-box flex-md-row-reverse text-md-end" data-animate="fadeIn">
-<div class="fbox-icon">
-<a href="#"><i class="icon-line-heart"></i></a>
-</div>
-<div class="fbox-content">
-<h3>KECEPATAN LAYANAN</h3>
-<p>Kualitas live streaming tanpa buffering. Kami dapat melayani pesanan jasa live streaming hingga 1 hari sebelum sebuah event berlangsung (standard maksimal)​</p>
-</div>
-</div>
-<div class="feature-box flex-md-row-reverse text-md-end mt-5" data-animate="fadeIn" data-delay="200">
-<div class="fbox-icon">
-<a href="#"><i class="icon-line-paper"></i></a>
-</div>
-<div class="fbox-content">
-<h3>Professional Crew & Equipment</h3>
-<p>Kami selalu melayani dengan kwalitas terbaik, dan didukung dengan SDM berpengalaman dalam menyelenggarakan live streaming</p>
-</div>
-</div>
+    <div class="feature-box flex-md-row-reverse text-md-end" data-animate="fadeIn">
+        <div class="fbox-icon">
+            <a href="#"><i class="icon-line2-energy"></i></a>
+        </div>
+        <div class="fbox-content">
+            <h3>@lang('general.kecepatan')</h3>
+            <p>@lang('general.kecepatan_desk')​</p>
+        </div>
+    </div>
 
-<div class="feature-box flex-md-row-reverse text-md-end mt-5" data-animate="fadeIn" data-delay="400">
+    <div class="feature-box flex-md-row-reverse text-md-end mt-5" data-animate="fadeIn" data-delay="200">
+        <div class="fbox-icon">
+            <a href="#"><i class="icon-user-check"></i></a>
+        </div>
+        <div class="fbox-content">
+        <h3>@lang('general.profesional')</h3>
+        <p>@lang('general.profesional_desk')</p>
+        </div>
+    </div>
+
+    <div class="feature-box flex-md-row-reverse text-md-end mt-5" data-animate="fadeIn" data-delay="400">
 
 
-</div>
+    </div>
 </div>
 <div class="col-lg-4 d-md-none d-lg-block text-center">
 <img src="images/aaq/live.png" alt="iphone 2">
@@ -122,20 +129,20 @@
 <div class="col-lg-4 col-md-6">
 <div class="feature-box" data-animate="fadeIn">
 <div class="fbox-icon">
-<a href="#"><i class="icon-line-power"></i></a>
+<a href="#"><i class="icon-magic1"></i></a>
 </div>
 <div class="fbox-content">
-<h3>Creative Thinking</h3>
-<p>Kreativitas adalah nilai pertama dan utama event organizer (EO) kami dalam mempersiapkan dan menghasilkan kegiatan yang istimewa serta menarik</p>
+<h3>@lang('general.creative')</h3>
+<p>@lang('general.creative_desk')</p>
 </div>
 </div>
 <div class="feature-box mt-5" data-animate="fadeIn" data-delay="200">
 <div class="fbox-icon">
-<a href="#"><i class="icon-line-check"></i></a>
+<a href="#"><i class="icon-toolbox"></i></a>
 </div>
 <div class="fbox-content">
-<h3>Alat Terbaik</h3>
-<p>Dari Kamera hingga Drone. Kami menggunakan kualitas terbaik sehingga memastikan Livestream dengan kualitas terbaik.</p>
+<h3>@lang('general.alat')</h3>
+<p>@lang('general.alat_desk')</p>
 </div>
 </div>
 
@@ -149,8 +156,14 @@
 
 <div class="container clearfix">
 <div id="oc-clients" class="owl-carousel image-carousel carousel-widget" data-margin="60" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
-<div class="oc-item"><a href="#"><img src="images/clients/1.png" alt="Clients"></a></div>
-<div class="oc-item"><a href="#"><img src="images/clients/2.png" alt="Clients"></a></div>
+@if (count($client))
+    @foreach ($client as $key => $content)
+    <div class="oc-item"><a href="#"><img src="{{asset('/images/clients/'.$content->logo) }}" alt="{{$content->nama}}"></a></div>
+
+    @endforeach
+@endif
+
+<!-- <div class="oc-item"><a href="#"><img src="images/clients/2.png" alt="Clients"></a></div>
 <div class="oc-item"><a href="#"><img src="images/clients/3.png" alt="Clients"></a></div>
 <div class="oc-item"><a href="#"><img src="images/clients/4.png" alt="Clients"></a></div>
 <div class="oc-item"><a href="#"><img src="images/clients/5.png" alt="Clients"></a></div>
@@ -158,7 +171,7 @@
 <div class="oc-item"><a href="#"><img src="images/clients/7.png" alt="Clients"></a></div>
 <div class="oc-item"><a href="#"><img src="images/clients/8.png" alt="Clients"></a></div>
 <div class="oc-item"><a href="#"><img src="images/clients/9.png" alt="Clients"></a></div>
-<div class="oc-item"><a href="#"><img src="images/clients/10.png" alt="Clients"></a></div>
+<div class="oc-item"><a href="#"><img src="images/clients/10.png" alt="Clients"></a></div> -->
 </div>
 </div>
 </div>

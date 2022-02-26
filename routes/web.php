@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\PortoController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\KontakController;
 
 
 /*
@@ -24,6 +26,10 @@ Route::get('/', function () {
     //return view('welcome');
     return view('underconstruction');
 });
+Route::get('/contact', function () {
+    //return view('welcome');
+    return view('contact');
+});
 
 if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
 {
@@ -32,10 +38,17 @@ if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
 }
 
 Route::get('/beranda',[ContentController::class,'beranda']);
+Route::get('/about',[ContentController::class,'tentang']);
+//services
+Route::get('/liveEvent',[ContentController::class,'services']);
+Route::get('/postProduction',[ContentController::class,'postProduction']);
+Route::get('/videoProduction',[ContentController::class,'videoProduction']);
 
-Route::get('/about',function(){
-    return view('tentang');
-});
+//portofolio
+Route::get('/portodiplay',[PortoController::class,'portodiplay']);
+// Route::get('/about',function(){
+//     return view('tentang');
+// });
 
 
 
@@ -49,11 +62,17 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::resource('kontak',KontakController::class);
 Route::group(['middleware' => ['auth']], function() {
+    Route::resource('client',ClientController::class);
     Route::resource('content',ContentController::class);
     Route::resource('porto',PortoController::class);
     Route::get('/getContent/{name?}',[ContentController::class,'getContent']);
-    Route::get('/addImage/{id}',[PortoController::class,'addImage']);
+    
+
+    Route::get('/addImage/{id}',[PortoController::class,'addImage'])->name('addImage');
+    Route::post('/storeImage',[PortoController::class,'storeImage'])->name('storeImage');
+
+    
 
 });

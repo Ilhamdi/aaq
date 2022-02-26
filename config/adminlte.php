@@ -252,9 +252,30 @@ return [
                     'url'  => 'getContent/heading-block',
                 ],
                 [
-                    'text' => 'last-event',
-                    'url'  => 'getContent/last-event',
+                    'text' => 'Layanan',
+                    'url'  => 'getContent/layanan',
                 ],
+                [
+                    'text' => 'Client',
+                    'url'  => 'client',
+                ],
+            ],
+            
+        ],
+
+        [
+            'text'        => 'About Us',
+            'icon'        => 'far fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'Judul About_Us',
+                    'url'  => 'getContent/judul_about',
+                ],
+                [
+                    'text' => 'Galeri About_Us',
+                    'url'  => 'getContent/galeri_about',
+                ],
+                
             ],
             
         ],
@@ -453,6 +474,21 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'ekkoLightbox' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/ekko-lightbox/ekko-lightbox.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/ekko-lightbox/ekko-lightbox.min.js',
                 ],
             ],
         ],

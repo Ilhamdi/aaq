@@ -9,7 +9,7 @@ class Porto_list extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'image','ket','portos_id'
+        'image','ket','porto_id'
     ];
 
     public function porto(){

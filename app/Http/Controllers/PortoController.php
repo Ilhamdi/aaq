@@ -6,6 +6,8 @@ use App\Models\Porto;
 use App\Models\Porto_list;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\App;
+
 class PortoController extends Controller
 {
     /**
@@ -23,6 +25,22 @@ class PortoController extends Controller
         ];
 
         return view('admin.porto.index')->with($params);
+    }
+    public function portodiplay()
+    {
+        $locale = App::currentLocale();
+
+        $data = Porto::all();
+        
+
+        $params = [
+            'title'=> 'Data Portofolio',
+            'data'=> $data,
+            
+        ];
+
+        return view('porto.porto')->with($params);
+
     }
 
     /**
@@ -56,15 +74,47 @@ class PortoController extends Controller
             $input['image'] = "$profileImage";
             $filename = $input['image'];
         }
-
         $Porto = Porto::create([
             'client'=> $request->client,
             'event'=> $request->event,
             'image'=> $filename,
+            'services'=>$request->services,
 
         ]);
+        
 
         return redirect()->route('porto.index')->with('success',"Data  berhasil dibuat.");
+    }
+    public function storeImage(Request $request)
+    {
+        $input = $request->all();
+        $filename = '';
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/porto';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+            $filename = $input['image'];
+        }
+
+        $porto = Porto_list::create([
+            'ket'=> $request->ket,
+            'portos_id'=> $request->portos_id,
+            'image'=> $filename,
+
+        ]);
+            $dataPorto = Porto::findOrFail($request->portos_id);
+            $data = Porto_list::where("portos_id","=",$request->portos_id)->get();
+
+            $params = [
+                'title' => 'Add Image Portofolio',
+                'porto' => $data,
+                'data' => $dataPorto,
+            ];
+
+        //return redirect()->route('porto.index')->with('success',"Data  berhasil dibuat.");
+        return view('admin.porto.addImage')->with('success',"Data  berhasil dibuat.")->with($params);
     }
 
     /**
@@ -106,14 +156,17 @@ class PortoController extends Controller
     }
 
 
-    public function addImage(Porto $porto)
+    public function addImage( $porto)
     {
         try {
-            $data = Porto::findOrFail($porto->id);
+            //$data = Porto::findOrFail($porto);
+            $dataPorto = Porto::findOrFail($porto);
+            $data = Porto_list::where("portos_id","=",$porto)->get();
 
             $params = [
                 'title' => 'Add Image Portofolio',
                 'porto' => $data,
+                'data' => $dataPorto,
             ];
 
             return view('admin.porto.addImage')->with($params);
@@ -150,6 +203,7 @@ class PortoController extends Controller
         $data->client= $request->client;
         $data->event = $request->event;
         $data->image = $filename;
+        $data->services = $request->services;
         $data->save();
         return redirect()->route('porto.index')->with('success', " Data Konten Berhasil di update.");
     }

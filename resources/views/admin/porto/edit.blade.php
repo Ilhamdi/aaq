@@ -70,6 +70,23 @@
         </div>
       </div>
 
+      <div class="form-group{{ $errors->has('services') ? ' has-error' : '' }}">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">Services 
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                    <select class="form-control" id="services" name="services">
+                                      <option value="{{$porto->services}}">{{$porto->services}}</option>
+                                      <option value="Multimedia-Services">Multimedia Services</option>
+                                      <option value="Broadcasting-Solutions">Broadcasting Solutions</option> 
+                                      <option value="Event-Services">Event Services</option>   
+                                      <option value="Internet-Solutions">Internet Solutions</option>  
+                                    </select>
+                                    @if ($errors->has('services'))
+                                    <span class="help-block">{{ $errors->first('services') }}</span>
+                                    @endif
+                                </div>
+          </div>
+
       <div class="col-md-12 col-sm-12 col-xs-12">
           <img src="{{asset('/images/porto/'.$porto->image) }}" width="550px" />
         </div>

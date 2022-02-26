@@ -53,6 +53,7 @@
           <th>image</th>
           <th>judul</th>
           <th>span</th>
+          <th>Lang</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -64,6 +65,7 @@
           <td><img src="{{asset('/images/display/'.$content->image) }}" width="100px"></td>
           <td>{{ $content->judul }}</td>
           <td>{{ $content->span }}</td>
+          <td>{{ $content->lang }}</td>
           <td>
             <a class="btn btn-primary" href="{{ route('content.edit',$content->id) }}">Edit</a>
               {!! Form::open(['method' => 'DELETE','route' => ['content.destroy', $content->id],'style'=>'display:inline']) !!}
@@ -80,6 +82,7 @@
           <th>image</th>
           <th>judul</th>
           <th>span</th>
+          <th>Lang</th>
           <th>Action</th>
         </tr>
       </tfoot>
